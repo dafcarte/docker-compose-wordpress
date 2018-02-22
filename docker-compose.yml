@@ -25,8 +25,8 @@ services:
     - 443:443
     restart: always
     volumes:
-    - ./nginx:/etc/nginx/conf.d:rw
-    - ./nginx:/var/log/nginx:rw
+    - ./nginx/conf.d:/etc/nginx/conf.d:rw
+    - ./nginx/log:/var/log/nginx:rw
     - ./html:/var/www/html:rw
   wordpress:
     container_name: wordpress_php
