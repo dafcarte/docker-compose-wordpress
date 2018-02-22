@@ -1,4 +1,7 @@
-networks: {}
+networks: {
+ front:
+ back:
+}
 services:
   mysql:
     container_name: wordpress_mariadb
