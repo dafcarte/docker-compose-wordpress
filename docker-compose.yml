@@ -14,7 +14,7 @@ services:
     - 3306:3306
     restart: always
     volumes:
-    - /home/hexpirate/test_wordpress/docker-compose-wordpress/data:/var/lib/mysql:rw
+    - ./data:/var/lib/mysql:rw
   nginx:
     container_name: wordpress_nginx
     image: nginx:latest
@@ -27,9 +27,9 @@ services:
     - 443:443
     restart: always
     volumes:
-    - /home/hexpirate/test_wordpress/docker-compose-wordpress/nginx/conf.d:/etc/nginx/conf.d:rw
-    - /home/hexpirate/test_wordpress/docker-compose-wordpress/nginx/log:/var/log/nginx:rw
-    - /home/hexpirate/test_wordpress/docker-compose-wordpress/html:/var/www/html:rw
+    - ./nginx/conf.d:/etc/nginx/conf.d:rw
+    - ./nginx/log:/var/log/nginx:rw
+    - ./html:/var/www/html:rw
   wordpress:
     container_name: wordpress_php
     environment:
@@ -44,6 +44,6 @@ services:
     - 9000:9000
     restart: always
     volumes:
-    - /home/hexpirate/test_wordpress/docker-compose-wordpress/html:/var/www/html:rw
+    - ./html:/var/www/html:rw
 version: '2.0'
 volumes: {}
