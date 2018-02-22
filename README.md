@@ -1,7 +1,5 @@
 # WordPress via docker-compose
 
-
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -9,12 +7,16 @@ See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-docker
-git
+Ubunutu and a strong cup of coffee
 
 ### Installing
 
-I recommend Ubuntu, you'll need to adjust if using another Linux flavor
+I recommend Ubuntu, you'll need to adjust if using another Linux flavor. Change to a directory that you intend to run the website from.
+
+```
+mkdir wordpresstest
+cd wordpresstest
+```
 
 Install docker
 
@@ -55,6 +57,7 @@ Give an example
 ```
 
 ## Deployment
+
 
 Add additional notes about how to deploy this on a live system
 
