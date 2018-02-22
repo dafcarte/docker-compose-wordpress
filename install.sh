@@ -11,7 +11,6 @@ sudo yum install epel-release
 sudo yum install -y python-pip
 
 pip install docker-compose
-git clone https://github.com/dafcarte/docker-compose-wordpress
 docker-compose up -d
 
 
@@ -21,6 +20,5 @@ sudo apt-get upgrade
 sudo apt-get install docker
 sudo gpasswd -a $USER docker
 sudo apt-get install docker-compose
-git clone https://github.com/dafcarte/docker-compose-wordpress
 docker-compose up -d
 
