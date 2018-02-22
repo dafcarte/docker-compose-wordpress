@@ -1,0 +1,47 @@
+networks: {}
+services:
+  mysql:
+    container_name: wordpress_mariadb
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: testingpassword
+    image: mariadb:latest
+    networks:
+      back: null
+    ports:
+    - 3306:3306
+    restart: always
+    volumes:
+    - ./data:/var/lib/mysql:rw
+  nginx:
+    container_name: wordpress_nginx
+    image: nginx:latest
+    links:
+    - wordpress
+    networks:
+      front: null
+    ports:
+    - 80:80
+    - 443:443
+    restart: always
+    volumes:
+    - ./nginx:/etc/nginx/conf.d:rw
+    - ./nginx:/var/log/nginx:rw
+    - ./html:/var/www/html:rw
+  wordpress:
+    container_name: wordpress_php
+    environment:
+      WORDPRESS_DB_PASSWORD: testingpassword
+    image: wordpress:4.9.4
+    links:
+    - mysql
+    networks:
+      back: null
+      front: null
+    ports:
+    - 9000:9000
+    restart: always
+    volumes:
+    - ./html:/var/www/html:rw
+version: '2.0'
+volumes: {}
