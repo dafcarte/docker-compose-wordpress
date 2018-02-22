@@ -11,7 +11,7 @@ services:
     networks:
       back: null
     ports:
-    - 3306:3306
+    - "3306:3306"
     restart: always
     volumes:
     - ./data:/var/lib/mysql:rw
@@ -23,8 +23,8 @@ services:
     networks:
       front: null
     ports:
-    - 80:80
-    - 443:443
+    - "80:80"
+    - "443:443"
     restart: always
     volumes:
     - ./nginx/conf.d:/etc/nginx/conf.d:rw
@@ -41,7 +41,7 @@ services:
       back: null
       front: null
     ports:
-    - 9000:9000
+    - "9000:9000"
     restart: always
     volumes:
     - ./html:/var/www/html:rw
