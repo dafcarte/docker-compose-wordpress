@@ -16,25 +16,23 @@ git
 
 I recommend Ubuntu, you'll need to adjust if using another Linux flavor
 
-Install docker using apt-get install docker.io
-
-Install git using apt-get install git
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Install docker
 
 ```
-Give the example
+apt-get install docker.io
 ```
 
-And repeat
+Install git
 
 ```
-until finished
+apt-get install git
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Pull down a clone of the project
+
+```
+git clone https://github.com/dafcarte/docker-compose-wordpress
+```
 
 ## Running the tests
 
