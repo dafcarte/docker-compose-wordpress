@@ -36,6 +36,12 @@ Pull down a clone of the project
 git clone https://github.com/dafcarte/docker-compose-wordpress
 ```
 
+Spin up the website stack
+
+```
+docker-compose up -d
+```
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
