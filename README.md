@@ -1,9 +1,15 @@
 # WordPress via docker-compose
 
+The goal of this project is to create a highly secure WordPress stack that can be brought up with the least amount of effort. This is not intended to support shared hosting. Use at your own risk.
+
+If you find that something flat out doesn't work or a weakness/problem in configuration - please let me know. I appreciate the feedback.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 See deployment for notes on how to deploy the project on a live system.
+
+These instructions are not yet done. Sorry!
 
 ### Prerequisites
 
