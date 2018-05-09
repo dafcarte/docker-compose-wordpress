@@ -1,18 +1,15 @@
+#!/bin/bash
 
 #this is for Amazon AWS Linux AMI (yum)
-sudo yum clean all
-sudo yum update
-sudo yum install -y docker
-gpasswd -a ec2-user docker
-systemctl start docker.service
-systemctl enable docker.service
-
-sudo yum install epel-release
-sudo yum install -y python-pip
-
-pip install docker-compose
-docker-compose up -d
-
+yum clean all
+yum update -y
+yum install -y docker
+service docker start
+usermod -a -G docker ec2-user
+curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+logout
+#we force a logout so that the user can assume permission over the docker service
 
 #this is for Ubunutu (apt)
 sudo apt-get update
