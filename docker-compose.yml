@@ -38,6 +38,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: mariadb:3306
       WORDPRESS_DB_USER: mysql-user
+      WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_PASSWORD: mysql-user-password
     image: wordpress:4.9.4-php7.2-fpm
     links:
