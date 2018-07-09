@@ -20,9 +20,6 @@ services:
   nginx:
     container_name: wordpress_nginx
     image: nginx:latest
-    links:
-    - wordpress
-    - phpmyadmin
     networks:
       front: null
     ports:
@@ -33,36 +30,31 @@ services:
     - ./nginx/conf.d:/etc/nginx/conf.d:rw
     - ./nginx/log:/var/log/nginx:rw
     - ./html:/var/www/html:rw
-   wordpress:
+  wordpress:
     container_name: wordpress_php
     environment:
       WORDPRESS_DB_HOST: mariadb:3306
       WORDPRESS_DB_USER: mysql-user
-      WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_PASSWORD: mysql-user-password
     image: wordpress:4.9.4-php7.2-fpm
-    links:
-    - mariadb
     networks:
       back: null
       front: null
-    ports:
-    - 9000:9000
     restart: always
     volumes:
     - ./html:/var/www/html:rw
   phpmyadmin:
     container_name: wordpress_phpmyadmin
-    image: phpmyadmin/phpmyadmin
-    links:
-    - mariadb
+    image: phpmyadmin/phpmyadmin:latest
     networks:
       back: null
+      front: null
     ports:
-    - 8000:8000
+    - 9000:80
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql-root-password
-      PMA_HOST: "mariadb"
+      PMA_HOST: mariadb
+      PMA_PORT: 3306
 version: '2.0'
 volumes: {}
