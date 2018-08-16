@@ -50,24 +50,22 @@ docker-compose up -d
 
 ## Built With
 
-* [NGINX](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [WordPress](https://maven.apache.org/) - Dependency Management
-* [PHP7](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [MariaDB](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [NGINX](http://www.dropwizard.io/1.0.2/docs/) - Webserver
+* [WordPress](https://maven.apache.org/) - CMS
+* [PHP7](https://rometools.github.io/rome/) - Used for Processing PHP
+* [MariaDB](https://rometools.github.io/rome/) - Database in Use
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Not taking contributions this time....
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We do versioning but not yet!
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Dave Carter** - *Initial work*
 
 ## License
 
@@ -75,6 +73,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* My friends
+* Beer
+* My friends who give me beer
