@@ -5,10 +5,10 @@ services:
   mariadb:
     container_name: wordpress_mariadb
     environment:
-      MYSQL_ROOT_PASSWORD: mysql-root-password
-      MYSQL_USER: mysql-user
-      MYSQL_PASSWORD: mysql-user-password
-      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     image: mariadb:latest
     networks:
       back: null
@@ -20,9 +20,6 @@ services:
   nginx:
     container_name: wordpress_nginx
     image: nginx:latest
-    links:
-    - wordpress
-    - phpmyadmin
     networks:
       front: null
     ports:
@@ -37,19 +34,19 @@ services:
     container_name: wordpress_php
     environment:
       WORDPRESS_DB_HOST: mariadb:3306
-      WORDPRESS_DB_USER: mysql-user
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_PASSWORD: mysql-user-password
-    image: wordpress:4.9.4-php7.2-fpm
+      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    image: wordpress:4.9.8-php7.1-fpm
     links:
     - mariadb
     networks:
       back: null
       front: null
-    ports:
-    - 9000:9000
     restart: always
     volumes:
+    - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    - ./php/www.conf:/usr/local/etc/php-fpm.d/www.conf
     - ./html:/var/www/html:rw
   phpmyadmin:
     container_name: wordpress_phpmyadmin
@@ -62,7 +59,7 @@ services:
     - 8000:8000
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: mysql-root-password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       PMA_HOST: "mariadb"
 version: '2.0'
 volumes: {}
