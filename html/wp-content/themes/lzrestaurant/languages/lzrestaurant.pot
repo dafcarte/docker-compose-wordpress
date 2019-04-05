@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LZRestaurant\n"
+"Last-Translator: \n"
+"Language-Team: Luzuk <support@luzuk.com>\n"
+"Language: English\n"
+"MIME-Version: 1.2.4\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: 404.php:17
+msgid 'Oops! That page can&rsquo;t be found.'
+msgstr ""
+
+#: 404.php:19
+msgid 'Return to home page'
+msgstr ""
+
+#: 404.php:23
+msgid 'It looks like nothing was found at this location. Maybe try a search?'
+msgstr ""
+
+#: comments.php:24
+msgid 'One thought on &ldquo;%s&rdquo;'
+msgstr ""
+
+#: comments.php:34
+msgid 'comments title'
+msgstr ""
+
+#: comments.php:63
+msgid 'Comments are closed.'
+msgstr ""
+
+#: footer.php:23
+msgid 'Footer Social Links Menu'
+msgstr ""
+
+#: header.php:23
+msgid 'Menu'
+msgstr ""
+
+#: searchform.php:17
+msgid Search for:
+msgstr ""
+
+#: searchform.php:19
+msgid 'placeholder'
+msgstr ""
+
+#: searchform.php:20
+msgid 'submit button'
+msgstr ""
+
+#: archive.php:49
+#: archive.php:82
+#: archive.php:114
+#: archive.php:146
+#: archive.php:180
+#: archive.php:215
+#: index.php:50
+#: index.php:85
+#: index.php:119
+#: index.php:154
+#: index.php:190
+#: index.php:226
+#: search.php:52
+#: search.php:88
+#: search.php:123
+#: search.php:158
+#: search.php:195
+#: search.php:232
+msgid 'Previous page'
+msgstr ""
+
+#: archive.php:50
+#: archive.php:83
+#: archive.php:115
+#: archive.php:147
+#: archive.php:181
+#: archive.php:216
+#: index.php:51
+#: index.php:86
+#: index.php:120
+#: index.php:155
+#: index.php:191
+#: index.php:227
+#: search.php:53
+#: search.php:89
+#: search.php:124
+#: search.php:159
+#: search.php:196
+#: search.php:233
+msgid 'Next page'
+msgstr ""
+
+#: archive.php:51
+#: archive.php:84
+#: archive.php:116
+#: archive.php:148
+#: archive.php:182
+#: archive.php:217
+#: index.php:52
+#: index.php:87
+#: index.php:121
+#: index.php:156
+#: index.php:192
+#: index.php:228
+#: search.php:54
+#: search.php:90
+#: search.php:125
+#: search.php:160
+#: search.php:197
+#: search.php:234
+msgid 'Page'
+msgstr ""
+
+#: index.php:19
+msgid 'Posts'
+msgstr ""
+
+#: search.php:18
+msgid 'Nothing Found'
+msgstr ""
+
+#: search.php:16
+msgid 'Search Results for: %s'
+msgstr ""
+
+#: search.php:42
+#: search.php:78
+#: search.php:113
+#: search.php:148
+#: search.php:185
+msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'
+msgstr ""
+
+#: single.php:35
+#: single.php:61
+#: single.php:87
+#: single.php:113
+#: single.php:140
+msgid 'Previous Post'
+msgstr ""
+
+#: single.php:35
+#: single.php:61
+#: single.php:87
+#: single.php:113
+#: single.php:140
+msgid 'Previous'
+msgstr ""
+
+#: single.php:36
+#: single.php:62
+#: single.php:88
+#: single.php:114
+#: single.php:141
+msgid 'Next Post'
+msgstr ""
+
+#: single.php:36
+#: single.php:62
+#: single.php:88
+#: single.php:114
+#: single.php:141
+msgid 'Next'
+msgstr ""
+
+#: functions.php:39
+msgid 'Top Menu'
+msgstr ""
+
+#: functions.php:40
+msgid 'Social Links Menu'
+msgstr ""
+
+#: functions.php:95
+msgid 'Welcome to Luzuk!!'
+msgstr ""
+
+#: functions.php:96
+msgid 'Thank you for choosing LZ Restaurant theme. It will be our pleasure to have you on our Welcome page to serve you better.'
+msgstr ""
+
+#: functions.php:97
+msgid 'GET STARTED'
+msgstr ""
+
+#: functions.php:103
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:105
+msgid 'Add widgets here to appear in your sidebar on blog posts and archive pages.'
+msgstr ""
+
+#: functions.php:115
+#: functions.php:125
+msgid 'Add widgets here to appear in your pages and posts'
+msgstr ""
+
+#: functions.php:113
+msgid 'Sidebar 2'
+msgstr ""
+
+#: functions.php:123
+msgid 'Sidebar 3'
+msgstr ""
+
+#: functions.php:133
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:143
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:153
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:163
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:135
+#: functions.php:145
+#: functions.php:155
+#: functions.php:165
+msgid 'Add widgets here to appear in your footer.'
+msgstr ""
+
+#: functions.php:177
+msgid 'Libre Franklin font: on or off'
+msgstr ""
+
+#: functions.php:204
+msgid 'Continue reading<span class="screen-reader-text"> "%s"</span>'
+msgstr ""
+
+#: functions.php:272
+msgid 'Luzuk'
+msgstr ""
+
+#: template-parts/footer/site-info.php:13
+msgid 'Restaurant Theme Design By'
+msgstr ""
+
+#: template-parts/header/site-branding.php:15
+msgid 'Scroll down to content'
+msgstr ""
+
+#: template-parts/content-audio.php:63
+#: template-parts/content-gallery.php:50
+#: template-parts/content-image.php:43
+#: template-parts/content-video.php:63
+#: template-parts/content.php:43
+#: template-parts/grid-layout.php:40
+#: template-parts/page/content-page.php:22
+msgid 'Pages:'
+msgstr ""
+
+#: page-template/custom-home-page.php:39
+msgid 'Read More'
+msgstr ""
+
+#: inc/customizer.php:16
+msgid 'Theme Settings'
+msgstr ""
+
+#: inc/customizer.php:17
+msgid "Description of what this panel does."
+msgstr ""
+
+#: inc/customizer.php:21
+msgid "General Settings"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:35
+msgid 'Do you want this section'
+msgstr ""
+
+#: inc/customizer.php:39
+#: inc/customizer.php:28
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "One Column"
+msgstr ""
+
+#: inc/customizer.php:41
+msgid "Three Columns"
+msgstr ""
+
+#: inc/customizer.php:42
+msgid "Four Columns"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Grid Layout"
+msgstr ""
+
+#: inc/customizer.php:49
+msgid 'Social Icon Section'
+msgstr ""
+
+#: inc/customizer.php:50
+msgid 'Add Social Link here'
+msgstr ""
+
+#: inc/customizer.php:61
+msgid 'Add Facebook link'
+msgstr ""
+
+#: inc/customizer.php:73
+msgid 'Add Twitter link'
+msgstr ""
+
+#: inc/customizer.php:85
+msgid 'Add Google Plus link'
+msgstr ""
+
+#: inc/customizer.php:97
+msgid 'Add Pintrest link'
+msgstr ""
+
+#: inc/customizer.php:109
+msgid 'Add Tumblr link'
+msgstr ""
+
+#: inc/customizer.php:117
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:128
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:141
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:150
+msgid 'Feature Products'
+msgstr ""
+
+#: inc/customizer.php:161
+msgid 'Section Short Title'
+msgstr ""
+
+#: inc/customizer.php:173
+#: inc/customizer.php:205
+msgid 'Section Title'
+msgstr ""
+
+#: inc/customizer.php:186
+msgid 'Select Product Page'
+msgstr ""
+
+#: inc/customizer.php:194
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:237
+msgid 'Front Page Section %d Content'
+msgstr ""
+
+#: inc/customizer.php:238
+msgid 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.'
+msgstr ""
+
+#: inc/customizer.php:347
+msgid 'LZ Restaurant Pro'
+msgstr ""
+
+#: inc/customizer.php:348
+msgid 'Upgrade Pro'
+msgstr ""

@@ -1,65 +1,64 @@
-networks:
-  back: {}
-  front: {}
+version: '3'
 services:
-  mariadb:
-    container_name: wordpress_mariadb
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-    image: mariadb:latest
-    networks:
-      back: null
-    ports:
-    - 3306:3306
-    restart: always
-    volumes:
-    - ./data:/var/lib/mysql:rw
-  nginx:
-    container_name: wordpress_nginx
-    image: nginx:latest
-    networks:
-      front: null
-    ports:
-    - 80:80
-    - 443:443
-    restart: always
-    volumes:
-    - ./nginx/conf.d:/etc/nginx/conf.d:rw
-    - ./nginx/log:/var/log/nginx:rw
-    - ./html:/var/www/html:rw
-   wordpress:
-    container_name: wordpress_php
-    environment:
-      WORDPRESS_DB_HOST: mariadb:3306
-      WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
-      WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
-      WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
-    image: wordpress:4.9.8-php7.1-fpm
-    links:
-    - mariadb
-    networks:
-      back: null
-      front: null
-    restart: always
-    volumes:
-    - ./php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-    - ./php/www.conf:/usr/local/etc/php-fpm.d/www.conf
-    - ./html:/var/www/html:rw
-  phpmyadmin:
-    container_name: wordpress_phpmyadmin
-    image: phpmyadmin/phpmyadmin
-    links:
-    - mariadb
-    networks:
-      back: null
-    ports:
-    - 8000:8000
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      PMA_HOST: "mariadb"
-version: '2.0'
+ mariadb:
+  container_name: morgansmeals.com_mariadb
+  image: mariadb:latest
+  environment:
+   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+   MYSQL_USER: ${MYSQL_USER}
+   MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+   MYSQL_DATABASE: ${MYSQL_DATABASE}
+  ports:
+  - 3306:3306
+  restart: always
+  volumes:
+  - ./data:/var/lib/mysql:rw
+ nginx:
+  container_name: morgansmeals.com_nginx
+  image: nginx:latest
+  links:
+  - wordpress
+  - mariadb
+  ports:
+  - 80:80
+  - 443:443
+  restart: always
+  command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  volumes:
+  - ./nginx/conf.d:/etc/nginx/conf.d:rw
+  - ./nginx/log:/var/log/nginx:rw
+  - ./html:/var/www/html:rw
+  - ./certbot/conf:/etc/letsencrypt:rw
+  - ./certbot/www:/var/www/certbot:rw
+ certbot:
+  container_name: morgansmeals.com_certbot
+  image: certbot/certbot
+  volumes:
+  - ./certbot/conf:/etc/letsencrypt:rw
+  - ./certbot/www:/var/www/certbot:rw
+  entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+ wordpress:
+  container_name: morgansmeals.com_wordpress_php
+  environment:
+   WORDPRESS_DB_HOST: mariadb:3306
+   WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
+   WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+   WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+  image: wordpress:5.0.1-php7.0-fpm
+  links:
+  - mariadb
+  restart: always
+  volumes:
+  - ./html:/var/www/html:rw
+ phpmyadmin:
+  container_name: morgansmeals.com_phpmyadmin
+  image: phpmyadmin/phpmyadmin
+  links:
+  - nginx
+  ports:
+  - 8000:8000
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+   PMA_HOST: "mariadb"
 volumes: {}
